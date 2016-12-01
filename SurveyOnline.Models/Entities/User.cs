@@ -39,7 +39,7 @@ namespace SurveyOnline.Models.Entities
         /// </summary>
         [Required]
         [Column(Order = 4, TypeName = "varchar")]
-        [MaxLength(31), MinLength(4)]
+        [MaxLength(31), MinLength(5)]
         public string UserName { get; set; }
     }
 }
