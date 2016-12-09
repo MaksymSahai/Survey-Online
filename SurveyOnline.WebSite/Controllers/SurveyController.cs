@@ -6,13 +6,14 @@ using System.Web.Mvc;
 
 namespace SurveyOnline.WebSite.Controllers
 {
-    public class HomeController : Controller
+    public class SurveyController : Controller
     {
         /// <summary>
-        /// Home Page.
+        /// List of customer survey.
         /// </summary>
-        /// <returns>Home Page action view.</returns>
-        public ActionResult Index()
+        /// <returns>Survey list action result.</returns>
+        [Authorize]
+        public ActionResult List()
         {
             return View();
         }
