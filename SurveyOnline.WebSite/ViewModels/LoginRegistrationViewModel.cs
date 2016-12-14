@@ -10,7 +10,7 @@ namespace SurveyOnline.WebSite.ViewModels
     {
         [Required]
         [Display(Name = "User Name")]
-        public string Email { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

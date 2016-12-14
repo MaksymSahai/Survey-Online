@@ -2,7 +2,9 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@{
+    ViewBag.Title = "Survey Online";
+}
 <div class="full-page-banner">
     <div class="wrapper">
         <div class="banner-text">
@@ -32,27 +34,3 @@
         </div>
     </div>
 </div>
-
-
-
-@if (Request.IsAuthenticated)
-{
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-        @Html.AntiForgeryToken()
-
-        <p>Hello  @User.Identity.GetUserName() </p>
-        <p>Hello  @User.Identity.GetUserId() </p>
-        <p></p>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
-    }
-}
-else
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li> @Html.ActionLink("Login", "Login", "Account")</li>
-        <li> @Html.ActionLink("Register", "Register", "Account")</li>
-    </ul>
-}
