@@ -17,5 +17,20 @@ namespace SurveyOnline.WebSite.Service
             var model = new SurveyListVMFactory();
             return model.Build();
         }
+
+        /// <summary>
+        /// Gets detail of survey. Colection survey questions, Collection question answers.
+        /// </summary>
+        /// <param name="id">Survey id.</param>
+        /// <returns>Survey details.</returns>
+        public SurveyDetailViewModel GetSurveyDetail(int id)
+        {
+            //if (id <= 0)
+            //    return HttpNotFound();
+
+            var model = new SurveyDetailVMFactory();
+            return model.Build(id);
+        }
+
     }
 }

@@ -39,8 +39,8 @@ namespace SurveyOnline.WebSite.ViewModels
             vm.SurveyName = dm.SurveyName;
             vm.SurveyDescription = dm.SurveyDescription;
             if (dm.SurveyStatus)
-                vm.SurveyStatus = "open";
-            vm.SurveyStatus = "closed";
+                vm.SurveyStatus = "Open";
+            vm.SurveyStatus = "Closed";
             vm.SurveyUrl = dm.SurveyUrl;
             vm.UserId = dm.UserId;
             

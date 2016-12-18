@@ -30,6 +30,22 @@ namespace SurveyOnline.Core.Managers
         }
 
         /// <summary>
+        /// Gets Survey by user id and survey id.
+        /// </summary>
+        /// <param name="surveyID">Survey ID.</param>
+        /// <param name="userID">Current user ID.</param>
+        /// <returns>Surey by user and ID.</returns>
+        public Survey GetSurveyIdByID(int surveyID, string userID)
+        {
+            var model = repository.Surveys.OrderBy(survey => survey.SurveyId).Where(survey => survey.UserId == userID && survey.SurveyId == surveyID).First();
+
+            if (model == null)
+                return null;
+
+            return model;
+        }
+
+        /// <summary>
         /// Gets boolean value is url is custom survey url.
         /// </summary>
         /// <param name="surveyUrl">requested url to check is it custom survey url.</param>

@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SurveyOnline.WebSite</RootNamespace>
     <AssemblyName>SurveyOnline.WebSite</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -112,6 +113,7 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -119,16 +121,14 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -192,6 +192,7 @@
     <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\SiteScripts\Controller.js" />
+    <Content Include="Scripts\SiteScripts\Detail.js" />
     <Content Include="Scripts\SiteScripts\Module.js" />
     <Content Include="Scripts\SiteScripts\Service.js" />
     <Content Include="Web.config">
@@ -206,6 +207,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SurveyController.cs" />
+    <Compile Include="Factories\SurveyDetailVMFactory.cs" />
     <Compile Include="Factories\SurveyListVMFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +216,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\SurveyController.cs" />
     <Compile Include="ViewModels\LoginRegistrationViewModel.cs" />
+    <Compile Include="ViewModels\QuestionAnswersViewModel.cs" />
+    <Compile Include="ViewModels\SurveyDetailViewModel.cs" />
+    <Compile Include="ViewModels\SurveyQuestionsViewModel.cs" />
     <Compile Include="ViewModels\SurveyViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +230,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Survey\List.cshtml" />
+    <Content Include="Views\Survey\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

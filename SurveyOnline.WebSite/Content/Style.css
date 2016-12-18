@@ -366,14 +366,40 @@ ul, ol {
         }
 }
 
+
+/*Survey Detail*/
+.survey-details-page {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.survey-details-header {
+    margin-bottom: 15px;
+    margin-left: 70px;
+}
+.survey-details-header p{
+    margin-left: 15px;
+}
+.survey-details-list {
+    font-size: 15px;
+    margin-left: 75px;
+}
+.question-list {
+    list-style-type: decimal;
+}
+.answer-list {
+    list-style-type: disc;
+}
+
+
 /*Footer*/
-    .top-footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-    }
+.top-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
 .footer-menu {
     margin-left: 10px;
 }

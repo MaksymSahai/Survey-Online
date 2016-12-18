@@ -18,7 +18,6 @@ namespace SurveyOnline.WebSite.Factories
         {
             var surveyManager = new SurveyManager();
             var userID = HttpContext.Current.User.Identity.GetUserId();
-            //var surveyManager = new SurveyManager();
             var dm = surveyManager.GetUserSurveys(userID);
 
             Mapper.Initialize(cfg => cfg.CreateMap<Survey, SurveyViewModel>());

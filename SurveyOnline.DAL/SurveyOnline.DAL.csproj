@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SurveyOnline.DAL</RootNamespace>
     <AssemblyName>SurveyOnline.DAL</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,8 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\SurveyOnlineContext.cs" />
+    <Compile Include="Entities\AnswerVariant.cs" />
+    <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\QuestionType.cs" />
     <Compile Include="Entities\Survey.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Interfaces\IAnswerVariantRepository.cs" />
     <Compile Include="Interfaces\ISurveyRepository.cs" />
     <Compile Include="Migrations\201612041716003_AddAspNetIdentityTables.cs" />
     <Compile Include="Migrations\201612041716003_AddAspNetIdentityTables.Designer.cs">
@@ -89,8 +94,15 @@
     <Compile Include="Migrations\201612061909252_add survey context.Designer.cs">
       <DependentUpon>201612061909252_add survey context.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612141716487_Add-Entities.cs" />
+    <Compile Include="Migrations\201612141716487_Add-Entities.Designer.cs">
+      <DependentUpon>201612141716487_Add-Entities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\IQuestionRepository.cs" />
+    <Compile Include="Repositories\AnswerVariantRepository.cs" />
+    <Compile Include="Repositories\QuestionRepository.cs" />
     <Compile Include="Repositories\SurveyRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612061909252_add survey context.resx">
       <DependentUpon>201612061909252_add survey context.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612141716487_Add-Entities.resx">
+      <DependentUpon>201612141716487_Add-Entities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

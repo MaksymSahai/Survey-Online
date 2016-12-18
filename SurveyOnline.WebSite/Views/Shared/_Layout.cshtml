@@ -34,11 +34,11 @@
                                 @if (!User.Identity.IsAuthenticated)
                                 {
                                      <li><a href="/Account/Login">Login</a></li>
-                                    <li><a href="/Account/Register">Registration</a></li>
+                                     <li><a href="/Account/Register">Registration</a></li>
                                 }
                                 else
                                 {
-                                    <li><span class="nav-itm">Welcome &nbsp<strong>@User.Identity.GetUserName()</strong></span></li>
+                                    <li><a>Welcome &nbsp<strong>@User.Identity.GetUserName()</strong></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" class="nav-itm">Profile</a></li>
                                     <li><a href="/survey/list" class="nav-itm">My Surveys</a></li>

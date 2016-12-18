@@ -36,5 +36,19 @@ namespace SurveyOnline.DAL.Context
         /// Initialize Survey db context.
         /// </summary>
         public virtual DbSet<Survey> Surveys { get; set; }
+        /// <summary>
+        /// Initialize QuestionType db context.
+        /// </summary>
+        public virtual DbSet<QuestionType> QuestionTypes { get; set; }
+
+        /// <summary>
+        /// Initialize Question db context.
+        /// </summary>
+        public virtual DbSet<Question> Questions { get; set; }
+
+        /// <summary>
+        /// Initialize AnswerVariant db context.
+        /// </summary>
+        public virtual DbSet<AnswerVariant> AnswerVariants { get; set; }
     }
 }
