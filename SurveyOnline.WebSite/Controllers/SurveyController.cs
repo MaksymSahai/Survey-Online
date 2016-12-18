@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SurveyOnline.WebSite.Factories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,6 +28,14 @@ namespace SurveyOnline.WebSite.Controllers
         public ActionResult Detail(int id)
         {
             return View();
+        }
+
+        public ActionResult Statistic(int id)
+        {
+            var model = new SurveyDetailVMFactory();
+            var vm = model.Build(id, false);
+
+            return View(vm);
         }
     }
 }

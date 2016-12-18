@@ -1,0 +1,75 @@
+﻿@model SurveyOnline.WebSite.ViewModels.SurveyDetailViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div class="survey-details-page">
+    <div class="wrapper">
+        <div class="survey-details-header">
+            <h2>@Model.SurveyName</h2>
+            <p>@Model.SurveyDescription</p>
+            <p>Survey Status:
+                @if (Model.SurveyStatus)
+                {
+                    <span data-toggle="tooltip" data-placement="right" data-original-title="Open"><i ng-switch-when="true" class="fa fa-check" aria-hidden="true"></i></span>
+                }
+                else
+                {
+                    <span data-toggle="tooltip" data-placement="right" data-original-title="Closed"><i ng-switch-when="false" class="fa fa-times" aria-hidden="true"></i></span>
+                }
+            </p>
+            <p>Question count: <span class="badge">@Model.SurvewyQuestionsCount</span></p>
+        </div>
+
+        <div id="chart_wrap"></div>
+        <script type="text/javascript">
+            var wrap = document.getElementById('chart_wrap');
+            for (var i = 0 ; i < @Model.SurvewyQuestionsCount; i++)
+            {
+                var div = document.createElement('div');
+                div.classList.add("charts");
+                div.id = "chart" + i;
+                wrap.appendChild(div);
+            }
+        </script>
+
+        @{int j = 0; }
+        @foreach (var w in Model.SurveyQuestions)
+        {
+            <script type="text/javascript">var dps = [];</script>
+                foreach (var e in w.AnswersVariants)
+                {
+                    <script type="text/javascript">
+                        dps.push({ label: "@e.AnswerVariantName", y: @e.AnswerVariantCount+2});
+                    </script>
+                }
+            <script type="text/javascript">
+                var chart = new CanvasJS.Chart("chart"+@j,
+                {
+                    title: {
+                        text: "@w.QuestionName"
+                    },
+                    axisX: {
+                        title: "Answers",
+                        titleFontSize: 18
+                    },
+                    axisY: {
+                        title: "Count",
+                        titleFontSize: 18
+                    },
+                    animationEnabled: true,
+                    animationDuration: 2000,
+                    theme: "theme1",
+                    data: [
+                    {
+                        type: "column",
+                        dataPoints: dps
+                    }
+                    ]
+                });
+                chart.render();
+            </script>
+            j++;
+         }
+    </div>
+</div>

@@ -391,6 +391,14 @@ ul, ol {
     list-style-type: disc;
 }
 
+/*Survey Statistics*/
+.charts {
+    height: 350px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 /*Footer*/
 .top-footer {

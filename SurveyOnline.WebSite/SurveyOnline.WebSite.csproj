@@ -231,6 +231,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Survey\List.cshtml" />
     <Content Include="Views\Survey\Detail.cshtml" />
+    <Content Include="Views\Survey\Statistic.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -16,11 +16,12 @@ namespace SurveyOnline.WebSite.Factories
         /// Build survey detail view model from db.
         /// </summary>
         /// <returns>Survey veiw model by id.</returns>
-        public SurveyDetailViewModel Build(int surveyID)
+        public SurveyDetailViewModel Build(int surveyID, bool isStatistic)
         {
             var surveyManager = new SurveyManager();
             var questionManager = new QuestionManager();
             var answerVariantManager = new AnswerVariantManager();
+            var questionnaireManager = new QuestionnaireManager();
 
             var userID = HttpContext.Current.User.Identity.GetUserId();
             var surveyDB = surveyManager.GetSurveyIdByID(surveyID, userID);
@@ -35,6 +36,11 @@ namespace SurveyOnline.WebSite.Factories
                 var ansverVariantModel = answerVariantManager.GetAnswerVariants(q.QuestionId);
                 Mapper.Initialize(cfg => cfg.CreateMap<AnswerVariant, QuestionAnswersViewModel>());
                 q.AnswersVariants = Mapper.Map<IEnumerable<AnswerVariant>, IEnumerable<QuestionAnswersViewModel>>(ansverVariantModel);
+                if (isStatistic)
+                {
+                    foreach (var a in q.AnswersVariants)
+                        a.AnswerVariantCount = questionnaireManager.GetAnswerCount(surveyID, a.AnswerVariantId);
+                }
             }
 
             var vm = new SurveyDetailViewModel { SurveyName = surveyDB.SurveyName, SurveyDescription = surveyDB.SurveyDescription, SurveyStatus = surveyDB.SurveyStatus, SurvewyQuestionsCount = questionCount, SurveyQuestions = questionVM };

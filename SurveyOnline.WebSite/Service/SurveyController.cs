@@ -29,7 +29,7 @@ namespace SurveyOnline.WebSite.Service
             //    return HttpNotFound();
 
             var model = new SurveyDetailVMFactory();
-            return model.Build(id);
+            return model.Build(id, true);
         }
 
     }

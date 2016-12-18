@@ -81,11 +81,13 @@
     <Compile Include="Context\SurveyOnlineContext.cs" />
     <Compile Include="Entities\AnswerVariant.cs" />
     <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\Questionnaire.cs" />
     <Compile Include="Entities\QuestionType.cs" />
     <Compile Include="Entities\Survey.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Interfaces\IAnswerVariantRepository.cs" />
     <Compile Include="Interfaces\ISurveyRepository.cs" />
+    <Compile Include="Interfaces\IQuestionnaireRepository.cs" />
     <Compile Include="Migrations\201612041716003_AddAspNetIdentityTables.cs" />
     <Compile Include="Migrations\201612041716003_AddAspNetIdentityTables.Designer.cs">
       <DependentUpon>201612041716003_AddAspNetIdentityTables.cs</DependentUpon>
@@ -98,10 +100,15 @@
     <Compile Include="Migrations\201612141716487_Add-Entities.Designer.cs">
       <DependentUpon>201612141716487_Add-Entities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612181206261_add-Questionnaire.cs" />
+    <Compile Include="Migrations\201612181206261_add-Questionnaire.Designer.cs">
+      <DependentUpon>201612181206261_add-Questionnaire.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IQuestionRepository.cs" />
     <Compile Include="Repositories\AnswerVariantRepository.cs" />
+    <Compile Include="Repositories\QuestionnaireRepository.cs" />
     <Compile Include="Repositories\QuestionRepository.cs" />
     <Compile Include="Repositories\SurveyRepository.cs" />
   </ItemGroup>
@@ -118,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612141716487_Add-Entities.resx">
       <DependentUpon>201612141716487_Add-Entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612181206261_add-Questionnaire.resx">
+      <DependentUpon>201612181206261_add-Questionnaire.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

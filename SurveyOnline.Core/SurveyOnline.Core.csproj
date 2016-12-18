@@ -93,6 +93,7 @@
     <Compile Include="Managers\AnswerVariantManager.cs" />
     <Compile Include="Managers\IdentityConfig.cs" />
     <Compile Include="Managers\QuestionManager.cs" />
+    <Compile Include="Managers\QuestionnaireManager.cs" />
     <Compile Include="Managers\SurveyManager.cs" />
     <Compile Include="OwinStartup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
