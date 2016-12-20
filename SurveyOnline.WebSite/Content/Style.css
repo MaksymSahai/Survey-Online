@@ -176,8 +176,12 @@ ul, ol {
     margin-left: 20%;
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 20%;
+    width: 50%;
     font-size: 15px;
+}
+.sent-page {
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 /*Survey List*/
 .Table {
