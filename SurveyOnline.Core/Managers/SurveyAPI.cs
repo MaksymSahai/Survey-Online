@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SurveyOnline.Core.Managers
 {
-    public class SurveyManager
+    public class SurveyAPI
     {
         private ISurveyRepository repository = new SurveyRepository();
 

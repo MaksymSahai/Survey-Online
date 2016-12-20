@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SurveyOnline.Core.Managers
 {
-    public class QuestionManager
+    public class QuestionAPI
     {
         private IQuestionRepository repository = new QuestionRepository();
 

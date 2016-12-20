@@ -171,7 +171,14 @@ ul, ol {
 .register-on-login-page a {
     margin-left: 10px;
 }
-
+/*Contact us*/
+.feedback-page {
+    margin-left: 20%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 20%;
+    font-size: 15px;
+}
 /*Survey List*/
 .Table {
     display: -webkit-box;
@@ -242,11 +249,11 @@ ul, ol {
     word-break: break-word;
 }
 
-    .Table-row-item:before {
-        content: attr(data-header);
-        width: 30%;
-        font-weight: 700;
-    }
+.Table-row-item:before {
+    content: attr(data-header);
+    width: 10%;
+    font-weight: 700;
+ }
 
 .u-Flex-grow1 {
     -webkit-flex-grow: 1;
@@ -325,8 +332,20 @@ ul, ol {
     color: #ff0000;
     font-size: 20px;
 }
+.fa-bars {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.spend-variants-list {
+    position: absolute;
+    /*visibility: hidden;*/
+}
+.fa-bars:hover .spend-variants-list {
+    visibility: visible;
+}
 @media (min-width: 500px) {
-    .Table-header; {
+    .Table-header {
         font-weight: 700;
         background-color: #f2f2f2;
     }

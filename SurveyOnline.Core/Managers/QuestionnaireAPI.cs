@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SurveyOnline.Core.Managers
 {
-    public class QuestionnaireManager
+    public class QuestionnaireAPI
     {
         private IQuestionnaireRepository repository = new QuestionnaireRepository();
 

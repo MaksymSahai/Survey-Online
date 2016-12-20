@@ -90,11 +90,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Managers\AnswerVariantManager.cs" />
+    <Compile Include="Managers\AnswerVariantAPI.cs" />
     <Compile Include="Managers\IdentityConfig.cs" />
-    <Compile Include="Managers\QuestionManager.cs" />
-    <Compile Include="Managers\QuestionnaireManager.cs" />
-    <Compile Include="Managers\SurveyManager.cs" />
+    <Compile Include="Managers\QuestionAPI.cs" />
+    <Compile Include="Managers\QuestionnaireAPI.cs" />
+    <Compile Include="Managers\SurveyAPI.cs" />
     <Compile Include="OwinStartup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

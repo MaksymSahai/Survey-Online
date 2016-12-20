@@ -16,7 +16,7 @@ namespace SurveyOnline.WebSite.Factories
         /// <returns>IEnumerable colection of user survey in vm format.</returns>
         public IEnumerable<SurveyViewModel> Build()
         {
-            var surveyManager = new SurveyManager();
+            var surveyManager = new SurveyAPI();
             var userID = HttpContext.Current.User.Identity.GetUserId();
             var dm = surveyManager.GetUserSurveys(userID);
 

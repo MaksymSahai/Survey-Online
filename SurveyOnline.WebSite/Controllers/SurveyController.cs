@@ -37,5 +37,10 @@ namespace SurveyOnline.WebSite.Controllers
 
             return View(vm);
         }
+
+        public ActionResult Conduct(int id)
+        {
+            return View();
+        }
     }
 }

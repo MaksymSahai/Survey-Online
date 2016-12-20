@@ -18,10 +18,10 @@ namespace SurveyOnline.WebSite.Factories
         /// <returns>Survey veiw model by id.</returns>
         public SurveyDetailViewModel Build(int surveyID, bool isStatistic)
         {
-            var surveyManager = new SurveyManager();
-            var questionManager = new QuestionManager();
-            var answerVariantManager = new AnswerVariantManager();
-            var questionnaireManager = new QuestionnaireManager();
+            var surveyManager = new SurveyAPI();
+            var questionManager = new QuestionAPI();
+            var answerVariantManager = new AnswerVariantAPI();
+            var questionnaireManager = new QuestionnaireAPI();
 
             var userID = HttpContext.Current.User.Identity.GetUserId();
             var surveyDB = surveyManager.GetSurveyIdByID(surveyID, userID);

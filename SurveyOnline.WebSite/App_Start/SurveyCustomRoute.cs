@@ -25,7 +25,7 @@ namespace SurveyOnline.WebSite.App_Start
             string controller = "Survey";
             string action = "Conduct";
 
-            var surveyManager = new SurveyManager();
+            var surveyManager = new SurveyAPI();
             var surveyUrl = surveyManager.IsSurveyUrl(url);
 
             if (!surveyUrl)
