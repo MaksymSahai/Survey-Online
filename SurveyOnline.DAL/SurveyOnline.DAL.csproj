@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201612181206261_add-Questionnaire.Designer.cs">
       <DependentUpon>201612181206261_add-Questionnaire.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612311747240_SelectedAnswer.cs" />
+    <Compile Include="Migrations\201612311747240_SelectedAnswer.Designer.cs">
+      <DependentUpon>201612311747240_SelectedAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IQuestionRepository.cs" />
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612181206261_add-Questionnaire.resx">
       <DependentUpon>201612181206261_add-Questionnaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612311747240_SelectedAnswer.resx">
+      <DependentUpon>201612311747240_SelectedAnswer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

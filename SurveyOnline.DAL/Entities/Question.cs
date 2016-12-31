@@ -27,5 +27,6 @@ namespace SurveyOnline.DAL.Entities
         /// Gets or sets the outside key to selected by.
         /// </summary>
         public int QuestionTypeId { get; set; }
+        public string SelectedAnswer { set; get; }
     }
 }

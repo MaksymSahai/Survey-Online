@@ -10,6 +10,7 @@ namespace SurveyOnline.WebSite.ViewModels
         public int QuestionId { get; set; }
         public string QuestionName { get; set; }
         public int QuestionTypeId { get; set; }
+        public string SelectedAnswer { set; get; }
         public IEnumerable<QuestionAnswersViewModel> AnswersVariants { get; set; }
     }
 }

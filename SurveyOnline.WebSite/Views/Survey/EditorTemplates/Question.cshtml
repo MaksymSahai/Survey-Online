@@ -1,0 +1,13 @@
+﻿@model SurveyOnline.WebSite.ViewModels.SurveyQuestionsViewModel
+<div>
+    @Html.HiddenFor(x => x.QuestionId)
+    <p>@Model.QuestionName</p>
+    @foreach (var e in Model.AnswersVariants)
+    {
+        <p>
+        <label>
+            @Html.RadioButtonFor(d => d.SelectedAnswer, e.AnswerVariantName) @e.AnswerVariantName
+        </label>
+        </p>
+    }
+</div>

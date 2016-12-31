@@ -30,11 +30,12 @@
                                 <span data-toggle="tooltip" data-placement="right" data-original-title="Closed"><i ng-switch-when="False" class="fa fa-times" aria-hidden="true"></i></span>
                             </div>
                             <div class="Table-row-item" data-header="Spend">
-                                <a><i class="fa fa-bars" aria-hidden="true" data-toggle="dropdown"></i></a>
+                                <a href="/{{survey.SurveyUrl}}" target="_blank">Conduct</a>
+                                @*<a><i class="fa fa-bars" aria-hidden="true" data-toggle="dropdown"></i></a>
                                 <ul class="dropdown-menu spend-variants-list" role="menu">
                                     <li><a href="/{{survey.SurveyUrl}}" target="_blank">Url for spend</a></li>
                                     <li><a href="#">Send by e-mail</a></li>
-                                </ul>
+                                </ul>*@
                             </div>
                             <div class="Table-row-item" data-header="View"><a href="/survey/detail/{{survey.SurveyId}}">Detail</a></div>
                             <div class="Table-row-item" data-header="Statistic"><a href="/survey/statistic/{{survey.SurveyId}}">Statistic</a></div>
