@@ -157,6 +157,31 @@ ul, ol {
 .login-on-register-page a {
     margin-left: 10px;
 }
+
+/*About*/
+.content-about {
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #bfbfbf;
+}
+/*How it*/
+.content-howit {
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #bfbfbf;
+}
+/*FQA*/
+.content-faq {
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #bfbfbf;
+}
 /*Login page*/
 .login-page {
     margin-left: 10%;

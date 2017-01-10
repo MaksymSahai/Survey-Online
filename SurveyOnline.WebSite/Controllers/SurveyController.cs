@@ -61,5 +61,11 @@ namespace SurveyOnline.WebSite.Controllers
             }
             return View(model);
         }
+
+        [Authorize]
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }

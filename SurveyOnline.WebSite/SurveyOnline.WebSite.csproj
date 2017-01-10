@@ -206,6 +206,7 @@
     <Compile Include="App_Start\SurveyCustomRoute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SurveyController.cs" />
@@ -239,6 +240,10 @@
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Feedback\Sent.cshtml" />
     <Content Include="Views\Survey\EditorTemplates\Question.cshtml" />
+    <Content Include="Views\Survey\Create.cshtml" />
+    <Content Include="Views\Content\faq.cshtml" />
+    <Content Include="Views\Content\Howit.cshtml" />
+    <Content Include="Views\Content\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
