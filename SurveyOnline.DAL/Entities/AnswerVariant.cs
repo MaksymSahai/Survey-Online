@@ -20,5 +20,7 @@ namespace SurveyOnline.DAL.Entities
         /// Gets or sets the name of variant answer.
         /// </summary>
         public string AnswerVariantName { get; set; }
+        
+        ///test chenges
     }
 }
