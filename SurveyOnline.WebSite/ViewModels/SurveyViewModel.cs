@@ -21,7 +21,7 @@ namespace SurveyOnline.WebSite.ViewModels
         /// <summary>
         /// Gets or sets status of survey.
         /// </summary>
-        public string SurveyStatus { get; set; }
+        public bool SurveyStatus { get; set; }
         /// <summary>
         /// Gets or sets custom url for survey.
         /// </summary>
@@ -38,12 +38,10 @@ namespace SurveyOnline.WebSite.ViewModels
             vm.SurveyId = dm.SurveyId;
             vm.SurveyName = dm.SurveyName;
             vm.SurveyDescription = dm.SurveyDescription;
-            if (dm.SurveyStatus)
-                vm.SurveyStatus = "Open";
-            vm.SurveyStatus = "Closed";
+            vm.SurveyStatus = dm.SurveyStatus;
             vm.SurveyUrl = dm.SurveyUrl;
             vm.UserId = dm.UserId;
-            
+
             return vm;
         }
 
@@ -56,7 +54,7 @@ namespace SurveyOnline.WebSite.ViewModels
             dm.SurveyDescription = vm.SurveyDescription;
             dm.SurveyStatus = false;
             dm.SurveyUrl = vm.SurveyUrl;
-            dm.UserId = HttpContext.Current.User.Identity.GetUserId(); 
+            dm.UserId = HttpContext.Current.User.Identity.GetUserId();
 
             return dm;
         }

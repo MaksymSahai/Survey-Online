@@ -18,7 +18,9 @@ namespace SurveyOnline.WebSite.Controllers
         [Authorize]
         public ActionResult List()
         {
-            return View();
+            var model = new SurveyListVMFactory();
+            var vm = model.Build();
+            return View(vm);
         }
 
         /// <summary>
@@ -29,7 +31,9 @@ namespace SurveyOnline.WebSite.Controllers
         [Authorize]
         public ActionResult Detail(int id)
         {
-            return View();
+            var model = new SurveyDetailVMFactory();
+            var vm = model.Build(id, false);
+            return View(vm);
         }
 
         public ActionResult Statistic(int id)
@@ -49,13 +53,12 @@ namespace SurveyOnline.WebSite.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> Conduct(SurveyDetailViewModel model)
+        public ActionResult Conduct(SurveyDetailViewModel model)
         {
             if (ModelState.IsValid)
             {
                 foreach (var q in model.SurveyQuestions)
                 {
-
                 }
                 return RedirectToAction("Index", "Home");
             }

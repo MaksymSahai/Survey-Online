@@ -1,4 +1,4 @@
-﻿
+﻿@model SurveyOnline.WebSite.ViewModels.SurveyDetailViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Survey Detail | Survey Online";
@@ -6,30 +6,41 @@
 
 <div class="survey-details-page">
     <div class="wrapper">
-        <div ng-app="SurveyOnlineModule">
-            <div ng-controller="SurveyController">
-                <div class="survey-details-header">
-                <h2>{{survey.SurveyName}}</h2>
-                <p>{{survey.SurveyDescription}}</p>
-                <p>
-                    <span ng-switch="survey.SurveyStatus">Survey Status:
-                        <span data-toggle="tooltip" data-placement="right" data-original-title="Open"><i ng-switch-when="true" class="fa fa-check" aria-hidden="true"></i></span>
-                        <span data-toggle="tooltip" data-placement="right" data-original-title="Closed"><i ng-switch-when="false" class="fa fa-times" aria-hidden="true"></i></span>
-                    </span>
-                </p>
-                <p>Question count: <span class="badge">{{survey.SurvewyQuestionsCount}}</span></p>
-                </div>
-                <div class="survey-details-list">
-                <ol class="question-list" ng-repeat="question in survey.SurveyQuestions">
-                    <li>
-                        {{question.QuestionName}}
-                        <ul class="answer-list" ng-repeat="answerVariant in question.AnswersVariants">
-                            <li>{{answerVariant.AnswerVariantName}}</li>
-                        </ul>
-                    </li>
-                </ol>
-                </div>
-            </div>
+
+        <div class="survey-details-header">
+            <h2>@Model.SurveyName</h2>
+            <p>@Model.SurveyDescription</p>
+            <p>
+                Survey Status:
+                @if (Model.SurveyStatus)
+                {
+                    <span data-toggle="tooltip" data-placement="right" data-original-title="Open"><i ng-switch-when="true" class="fa fa-check" aria-hidden="true"></i></span>
+                }
+                else
+                {
+                    <span data-toggle="tooltip" data-placement="right" data-original-title="Closed"><i ng-switch-when="false" class="fa fa-times" aria-hidden="true"></i></span>
+                }
+            </p>
+            <p>Question count: <span class="badge">@Model.SurvewyQuestionsCount</span></p>
         </div>
+        @using (Html.BeginForm("Conduct", "Survey", FormMethod.Post))
+        {
+            @Html.LabelFor(x => x.SurveyQuestions)
+            foreach (var w in Model.SurveyQuestions)
+            {
+
+                <div>
+                    <p>@w.QuestionName</p>
+                    @foreach (var e in w.AnswersVariants)
+                    {
+                        <p>
+                            <label>
+                                @Html.RadioButton(w.QuestionName, e.AnswerVariantName) @e.AnswerVariantName
+                            </label>
+                        </p>
+                    }
+                </div>
+            }
+        }
     </div>
 </div>

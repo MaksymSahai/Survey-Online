@@ -1,4 +1,4 @@
-﻿
+﻿@model  IEnumerable<SurveyOnline.WebSite.ViewModels.SurveyViewModel>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -7,42 +7,43 @@
 }
 <div>
     <div class="wrapper">
-        <div ng-app="SurveyOnlineModule">
-            <div ng-controller="SurveyController">
-                <center><h3>{{Message}}</h3></center>
-                <div class="Table table table-striped table-hover">
-                    <div class="Table-row Table-header ">
-                        <div class="Table-row-item">Title</div>
-                        <div class="Table-row-item u-Flex-grow3">Description</div>
-                        <div class="Table-row-item">Question count</div>
-                        <div class="Table-row-item">Status</div>
-                        <div class="Table-row-item">Conduct</div>
-                        <div class="Table-row-item">View</div>
-                        <div class="Table-row-item">Statistic</div>
-                    </div>
-                    <div ng-repeat="survey in surveys">
-                        <div class="Table-row">
-                            <div class="Table-row-item" data-header="Title"><strong>{{survey.SurveyName}}</strong></div>
-                            <div class="Table-row-item  u-Flex-grow3" data-header="Description">{{survey.SurveyDescription}}</div>
-                            <div class="Table-row-item" data-header="Question">row1 col3</div>
-                            <div class="Table-row-item" data-header="Status" ng-switch="survey.SurveyStatus">
-                                <span data-toggle="tooltip" data-placement="right" data-original-title="Open"><i ng-switch-when="True" class="fa fa-check" aria-hidden="true"></i></span>
-                                <span data-toggle="tooltip" data-placement="right" data-original-title="Closed"><i ng-switch-when="False" class="fa fa-times" aria-hidden="true"></i></span>
-                            </div>
-                            <div class="Table-row-item" data-header="Spend">
-                                <a><i class="fa fa-bars" aria-hidden="true" data-toggle="dropdown"></i></a>
-                                <ul class="dropdown-menu spend-variants-list" role="menu">
-                                    <li><a href="/{{survey.SurveyUrl}}" target="_blank">Url for conduct</a></li>
-                                    <li><a href="#">Send by e-mail</a></li>
-                                </ul>
-                            </div>
-                            <div class="Table-row-item" data-header="View"><a href="/survey/detail/{{survey.SurveyId}}">Detail</a></div>
-                            <div class="Table-row-item" data-header="Statistic"><a href="/survey/statistic/{{survey.SurveyId}}">Statistic</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="btn btn-default"><a href="/survey/create">Create survey</a></div>
+        <center><h3>My Surveys</h3></center>
+        <div class="Table table table-striped table-hover">
+            <div class="Table-row Table-header ">
+                <div class="Table-row-item">Title</div>
+                <div class="Table-row-item u-Flex-grow3">Description</div>
+                <div class="Table-row-item">Status</div>
+                <div class="Table-row-item">Conduct</div>
+                <div class="Table-row-item">View</div>
+                <div class="Table-row-item">Statistic</div>
             </div>
+            @foreach (var survey in Model)
+            {
+                <div class="Table-row">
+                    <div class="Table-row-item"><strong>@survey.SurveyName</strong></div>
+                    <div class="Table-row-item  u-Flex-grow3"> @survey.SurveyDescription</div>
+                    <div class="Table-row-item">
+                        @if (survey.SurveyStatus)
+                        {
+                            <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                        }
+                        else
+                        {
+                            <span><i class="fa fa-times" aria-hidden="true"></i></span>
+                        }
+                    </div>
+                    <div class="Table-row-item">
+                        <a><i class="fa fa-bars" aria-hidden="true" data-toggle="dropdown"></i></a>
+                        <ul class="dropdown-menu spend-variants-list" role="menu">
+                            <li><a href="/@survey.SurveyUrl" target="_blank">Url for conduct</a></li>
+                            <li><a href="#">Send by e-mail</a></li>
+                        </ul>
+                    </div>
+                    <div class="Table-row-item"><a href="/survey/detail/@survey.SurveyId">Detail</a></div>
+                    <div class="Table-row-item"><a href="/survey/statistic/@survey.SurveyId">Statistic</a></div>
+                </div>
+            }
+            <div class="btn btn-default"><a href="/survey/create">Create survey</a></div>
         </div>
     </div>
 </div>
